@@ -1,0 +1,19 @@
+Reference,Qty,Designator,Value,Footprint,Notes,Vendor_Link
+U1,1,KBPC3510,KBPC3510,KBP_Bridge_Generic,35A bridge rectifier (primary PSU),TBD
+Q1-Q4,4,2SC5200,2SC5200,TO-3P_Package,Power NPN transistor (output),TBD
+Q5-Q8,4,2SA1943,2SA1943,TO-3P_Package,Power PNP transistor (output),TBD
+D1-D4,4,IN5408,IN5408,DO-201AD,High current diode alternative to bridge legs,TBD
+C1-C4,4,10000uF_80V,10000uF/80V,Radial_Electrolytic_Wide,Main filter caps (paralleling possible),TBD
+R_emitter,8,0.33R_5W,0.33Ω,Resistor_Cement_5W,Cement resistor for each output transistor,TBD
+Qdrv1,Qdrv2,2,BD139/BD140,BD139; BD140,TO-126,Driver transistors (NPN/PNP),TBD
+Qpre,2,BC546/BC556,BC546; BC556,TO-92,Differential preamp pair,TBD
+Relay,1,30A_Relay,30A_SPST,Through_Hole_Relay_12V,Speaker protection relay (12V coil),TBD
+NTC,1,NTC_Inrush,NTC_thermistor,Radial_NTC,Inrush current limiter,N/A
+Fuse,1,Glass_Fuse,3A_Fuse,Panel_Fuse_Holder,AC mains fuse holder,TBD
+Terminal_AC,1,AC_IN,7.62mm_Screw,Terminal_7.62mm,AC input terminal block,TBD
+Terminal_SPK,1,SPK_OUT,7.62mm_Screw,Terminal_7.62mm,Speaker output terminal block (2 positions),TBD
+Terminal_AUX,1,AUDIO_IN,5.08mm_Screw,Terminal_5.08mm,Audio input terminal block (or RCA footprint),TBD
+Zener,1,15V_Zener,15V_Zener,DIODE_ZENER,Preamp regulator zener diode footprint,TBD
+Regulator,1,7815,7815,TO-220,Optional linear 15V regulator footprint,TBD
+ThermSensor,1,Temp_Sensor,NTC_or_Klixon,Sensor_Pads,Thermal cutout sensor footprint,TBD
+Heatsink_Isol,4,Insulated_Mount,Insulator,Mounting_Isolator,Insulated transistor mounting hardware,TBD
