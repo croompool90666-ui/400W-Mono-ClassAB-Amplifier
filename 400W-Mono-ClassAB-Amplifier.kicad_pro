@@ -1,0 +1,6 @@
+(kicad_pro (version 20211014) (generator KiCad)
+  (project (name "400W-Mono-ClassAB-Amplifier"))
+  (schematics (main "400W-Mono-ClassAB-Amplifier.kicad_sch"))
+  (boards (main "400W-Mono-ClassAB-Amplifier.kicad_pcb"))
+  (properties (kicad_version "7.0.10"))
+)
