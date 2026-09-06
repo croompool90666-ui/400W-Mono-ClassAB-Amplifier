@@ -1,0 +1,65 @@
+name: KiCad build and release
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Make output dir
+        run: mkdir -p build_outputs
+
+      - name: Find schematic and PCB
+        id: find
+        run: |
+          schem=$(git ls-files '*.kicad_sch' | head -n1 || true)
+          pcb=$(git ls-files '*.kicad_pcb' | head -n1 || true)
+          echo "schem=$schem" >> $GITHUB_OUTPUT
+          echo "pcb=$pcb" >> $GITHUB_OUTPUT
+
+      - name: Export with KiCad Docker
+        uses: addnab/docker-run-action@v3
+        with:
+          image: kicad/kicad:7.0.10
+          options: -v ${{ github.workspace }}:/workspace
+          run: |
+            set -e
+            cd /workspace
+            mkdir -p build_outputs
+            if [ -n "${{ steps.find.outputs.schem }}" ]; then
+              kicad-cli sch export pdf "${{ steps.find.outputs.schem }}" -o build_outputs/schematic.pdf
+              kicad-cli sch export bom "${{ steps.find.outputs.schem }}" -o build_outputs/bom.csv
+            fi
+            if [ -n "${{ steps.find.outputs.pcb }}" ]; then
+              mkdir -p build_outputs/gerbers
+              kicad-cli pcb export gerbers "${{ steps.find.outputs.pcb }}" -o build_outputs/gerbers/
+              cd build_outputs && zip -r gerbers.zip gerbers || true
+            fi
+
+      - name: Create GitHub Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: kicad-build-${{ github.run_id }}
+          release_name: "KiCad Build ${{ github.run_id }}"
+          draft: false
+          prerelease: false
+
+      - name: Upload Gerber ZIP
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: build_outputs/gerbers.zip
+          asset_name: gerbers.zip
+          asset_content_type: application/zip
