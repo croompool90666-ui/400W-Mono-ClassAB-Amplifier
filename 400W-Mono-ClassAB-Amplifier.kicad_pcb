@@ -2,12 +2,16 @@
   (general (thickness 1.6))
   (paper "A4")
   (layers (0 "F.Cu") (31 "B.Cu") (42 "Edge.Cuts"))
+
   (setup (last_trace_width 0.254) (trace_clearance 0.25) (zone_clearance 0.5) (via_size 0.8) (via_drill 0.4))
+
   (net (code 1) (name "NET1"))
+
+  ; Minimal module using a standard KiCad footprint name
   (module "Resistors_SMD:R_0805" (layer F.Cu) (at 50 50 0)
     (pad 1 smd rect (at -1.25 0) (size 1.5 1.8) (layers F.Cu F.Paste F.Mask))
     (pad 2 smd rect (at 1.25 0) (size 1.5 1.8) (layers F.Cu F.Paste F.Mask))
   )
-  (footprint "" )
+
   (properties (board "400W-Mono-ClassAB-Amplifier"))
 )

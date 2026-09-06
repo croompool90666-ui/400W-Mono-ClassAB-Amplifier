@@ -3,6 +3,8 @@
   (title "400W-Mono-ClassAB-Amplifier")
   (date "2026-09-06")
   (kicad_version "7.0.10")
+
+  ; One symbol instance (uses library Device:R). Instances must not redefine pins.
   (symbol (lib_id "Device:R")
     (at 50 50)
     (unit 1)
@@ -10,9 +12,9 @@
     (property "Reference" "R1")
     (property "Value" "10k")
     (property "Footprint" "Resistors_SMD:R_0805")
-    (pin "1" (type passive) (at 0 0))
-    (pin "2" (type passive) (at 100 0))
   )
+
+  ; Minimal net and node references
   (net (code 1) (name "NET1")
     (node (ref R1) (pin 1) (x 50) (y 50))
     (node (ref R1) (pin 2) (x 150) (y 50))
