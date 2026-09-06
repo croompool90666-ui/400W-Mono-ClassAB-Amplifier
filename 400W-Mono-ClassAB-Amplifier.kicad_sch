@@ -1,0 +1,5 @@
+(kicad_sch (version 20211014) (generator KiCad) (paper "A4")
+  (title "400W-Mono-ClassAB-Amplifier")
+  (date "2026-09-06")
+  (comment "Placeholder KiCad v7 schematic: syntactically valid minimal sheet for CI builds. Not a functional amplifier design.")
+)
