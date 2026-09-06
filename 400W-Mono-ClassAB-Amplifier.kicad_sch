@@ -5,10 +5,12 @@
   (date "2026-09-06")
   (tstamp 0x5F3759DF)
 
+  ; Iterative fix #8: minimal schematic without a netlist block to test parser tolerance
+
   ; Top-level sheet
   (sheet (name "Top") (tstamp 0x5F3A1C2B))
 
-  ; Resistor symbol instance (minimal/standard ordering)
+  ; Resistor symbol instance
   (symbol (lib_id "Device:R")
     (at 50 50)
     (unit 1)
@@ -32,15 +34,8 @@
     (property "Footprint" "Capacitors_SMD:C_0805")
   )
 
-  ; Wire and connection
+  ; Wire and connection only
   (wire (pts (xy 50 50) (xy 150 50)))
   (connection (at 150 50))
 
-  ; Minimal netlist
-  (net (code 1) (name "NET1")
-    (node (ref R1) (pin 1) (x 50) (y 50))
-    (node (ref R1) (pin 2) (x 75) (y 50))
-    (node (ref C1) (pin 1) (x 150) (y 50))
-    (node (ref C1) (pin 2) (x 175) (y 50))
-  )
 )
