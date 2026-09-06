@@ -1,15 +1,15 @@
-(kicad_sch (version 20220425) (generator eeschema)
+(kicad_sch (version 20211014) (generator eeschema)
   (kicad_version "7.0.10")
   (paper "A4")
   (title "400W-Mono-ClassAB-Amplifier")
   (date "2026-09-06")
   (tstamp 0x5F3759DF)
 
-  ; Iterative fix #13: lowercase lib_id, remove per-symbol uuids/tstamps, minimal required fields
+  ; Iterative fix #14: try minimal canonical KiCad-generated structure, small variations
 
   (sheet (name "Top") (tstamp 0x5F3A1C2B))
 
-  (symbol (lib_id "device:r")
+  (symbol (lib_id "Device:R" (value "R") (footprint "Resistors_SMD:R_0805"))
     (at 50 50)
     (unit 1
       (in_bom yes)
@@ -17,10 +17,9 @@
     )
     (property "Reference" "R1")
     (property "Value" "10k")
-    (property "Footprint" "Resistors_SMD:R_0805")
   )
 
-  (symbol (lib_id "device:c")
+  (symbol (lib_id "Device:C" (value "C") (footprint "Capacitors_SMD:C_0805"))
     (at 150 50)
     (unit 1
       (in_bom yes)
@@ -28,7 +27,6 @@
     )
     (property "Reference" "C1")
     (property "Value" "10u")
-    (property "Footprint" "Capacitors_SMD:C_0805")
   )
 
   (wire (pts (xy 50 50) (xy 150 50)))
