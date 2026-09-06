@@ -1,6 +1,6 @@
 # 400W Mono Class-AB Amplifier
 
-This repository contains the design for a 400W Mono Class-AB audio amplifier PCB optimized for assembly using parts available in Indian electronics markets (Lajpat Rai / Chandni / ElectronicsComp / local suppliers).
+This repository contains the design for a 400W Mono Class-AB audio amplifier PCB optimized for assembly using parts available in Indian electronics markets (Lajpat Rai / Chandni / local suppliers).
 
 Confirmed defaults:
 - Relay coil voltage: 12 V
