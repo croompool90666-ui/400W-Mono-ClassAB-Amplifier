@@ -3,27 +3,29 @@
   (title "400W-Mono-ClassAB-Amplifier")
   (date "2026-09-06")
   (kicad_version "7.0.10")
+  (tstamp 0x5F3759DF)
   (uuid "b3f1c6d4-9e2a-4a68-8f3b-1d2e3f4a5b6c")
 
   ; Top-level sheet instance
-  (sheet (name "Top") (tstamp 0x5F3A1C2B) (uuid 4f8d2c1a-3b2a-4d5e-9f7a-0b1c2d3e4f50))
+  (sheet (name "Top") (tstamp 0x5F3A1C2B) (uuid "4f8d2c1a-3b2a-4d5e-9f7a-0b1c2d3e4f50"))
 
   ; A simple resistor symbol instance (standard library Device:R)
   (symbol (lib_id "Device:R")
     (at 50 50)
     (unit 1)
+    (in_bom yes)
     (tstamp 0x5F3759DF)
-    (uuid 123e4567-e89b-12d3-a456-426614174001)
-    (property "Reference" "R1")
-    (property "Value" "10k")
-    (property "Footprint" "Resistors_SMD:R_0805")
-    (fields
-      (field (name "Comment") (value "Minimal resistor for CI"))
-    )
+    (uuid "123e4567-e89b-12d3-a456-426614174001")
+    (property "Reference" "R1" (id 0))
+    (property "Value" "10k" (id 1))
+    (property "Footprint" "Resistors_SMD:R_0805" (id 2))
+    (fields (field (name "Comment") (value "Minimal resistor for CI")))
   )
 
-  ; A short wire and net connecting the pins (positions are illustrative)
+  ; Wire and net connecting the pins (positions are illustrative)
   (wire (pts (xy 50 50) (xy 150 50)))
+
+  (connection (at 150 50))
 
   (net (code 1) (name "NET1")
     (node (ref R1) (pin 1) (x 50) (y 50))
