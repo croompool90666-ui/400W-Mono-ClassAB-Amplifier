@@ -5,8 +5,13 @@
   (date "2026-09-06")
   (tstamp 0x5F3759DF)
 
-  ; Iterative fix #15: remove netlist block and use purely symbol/wire/connection primitives
-  ; Slight reformatting to mimic KiCad's canonical whitespace/line breaks
+  (title_block
+    (title "400W-Mono-ClassAB-Amplifier")
+    (company "")
+    (rev "1")
+    (date "2026-09-06")
+    (comment "")
+  )
 
   (sheet (name "Top") (tstamp 0x5F3A1C2B))
 
@@ -35,4 +40,10 @@
   (wire (pts (xy 50 50) (xy 150 50)))
   (connection (at 150 50))
 
+  (net (code 1) (name "NET1")
+    (node (ref R1) (pin 1) (x 50) (y 50))
+    (node (ref R1) (pin 2) (x 75) (y 50))
+    (node (ref C1) (pin 1) (x 150) (y 50))
+    (node (ref C1) (pin 2) (x 175) (y 50))
+  )
 )
