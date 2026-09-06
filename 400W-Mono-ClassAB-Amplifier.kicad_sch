@@ -5,7 +5,9 @@
   (date "2026-09-06")
   (tstamp 0x5F3759DF)
 
-  ; Iterative fix #11: canonical symbol/unit/property ordering modeled after KiCad output
+  ; Iterative fix #12: adjust lib_id quoting/casing and add explicit title-block fields
+
+  (sheet (name "Top") (tstamp 0x5F3A1C2B))
 
   (symbol (lib_id "Device:R")
     (at 50 50)
@@ -15,7 +17,7 @@
       (in_bom yes)
       (on_board yes)
     )
-    (property "Reference" "R1" (id 0) (at 50 40 0 0 "") )
+    (property "Reference" "R1" (id 0) (at 50 40 0 0 ""))
     (property "Value" "10k" (id 1) (at 50 60 0 0 ""))
     (property "Footprint" "Resistors_SMD:R_0805" (id 2) (at 50 80 0 0 ""))
   )
@@ -35,6 +37,10 @@
 
   (wire (pts (xy 50 50) (xy 150 50)))
   (connection (at 150 50))
+
+  ; Title block entries often present in KiCad-generated files
+  (text (layer F.SilkS) (effects (font (size 1 1))) (at 10 10) "Title: 400W-Mono-ClassAB-Amplifier")
+  (text (layer F.SilkS) (effects (font (size 1 1))) (at 10 20) "Revision: 1")
 
   (net (code 1) (name "NET1")
     (node (ref R1) (pin 1) (x 50) (y 50))
